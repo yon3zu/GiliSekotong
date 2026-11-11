@@ -1,7 +1,6 @@
 # GiliSekotong — E-Ticketing Perahu Trip 3 Gili (gilisekotong.com)
 
-Platform pemesanan perahu cateran dari Dermaga Tawun, Sekotong (Lombok Barat) ke Gili Nanggu, Gili Sudak, dan Gili Kedis,
-dengan **sistem pendukung keputusan pelayaran berbasis pohon keputusan (C4.5 / ID3)**.
+Platform pemesanan perahu cateran dari Dermaga Tawun, Sekotong (Lombok Barat) ke Gili Nanggu, Gili Sudak, dan Gili Kedis.
 
 Stack: Laravel 12 · MySQL (MariaDB XAMPP) · Tailwind CSS 4 · Alpine.js · PHP 8.2 dari XAMPP.
 
@@ -36,8 +35,8 @@ Buka **http://localhost/E-TIcket/public** (Apache XAMPP), atau `$PHP artisan ser
 
 - **Pemilik Kapal** — akun hanya dibuat admin (menu *Pemilik Kapal*), login dengan nomor HP. Halaman `/pemilik` berhuruf besar: jadwal kapalnya 14 hari, **lapor tamu offline** (tanggal langsung tertutup untuk pemesanan online), pembukuan bulanan (sewa kapal online + offline), riwayat penumpang, dan panduan yang bisa dicetak (`/pemilik/panduan`).
 - **Pemesan** — pesan perahu, unggah bukti transfer, lihat/cetak e-tiket QR, batalkan pesanan yang belum dibayar.
-- **Admin** — mendaftarkan pemilik kapal, melihat & membuka kembali laporan tamu offline (menu *Tamu Offline*), verifikasi pembayaran, check-in (pindai QR), jadwal ulang, input kondisi laut harian, lihat pohon keputusan, laporan.
-- **Super Admin** — semua menu admin + data latih, melatih ulang model, master perahu/paket makan/pengguna, pengaturan.
+- **Admin** — mendaftarkan pemilik kapal, melihat & membuka kembali laporan tamu offline (menu *Tamu Offline*), verifikasi pembayaran, check-in (pindai QR), jadwal ulang, input kondisi laut harian, laporan.
+- **Super Admin** — semua menu admin + master perahu/paket makan/pengguna, pengaturan.
 
 ## Aturan harga
 
@@ -70,12 +69,12 @@ Buka **http://localhost/E-TIcket/public** (Apache XAMPP), atau `$PHP artisan ser
 
 | Sumber | Endpoint | Jeda minimum | Dipakai untuk |
 |---|---|---|---|
-| Prakiraan cuaca Dusun Tawun (adm4 52.01.07.2002) | `api.bmkg.go.id/publik/prakiraan-cuaca` | 60 menit | Input pohon keputusan: cuaca, angin, jarak pandang, perkiraan gelombang |
+| Prakiraan cuaca Dusun Tawun (adm4 52.01.07.2002) | `api.bmkg.go.id/publik/prakiraan-cuaca` | 60 menit | Kondisi laut: cuaca, angin, jarak pandang, perkiraan gelombang |
 | Peringatan dini cuaca (nowcast) | `bmkg.go.id/alerts/nowcast/id` | 10 menit | Hanya item yang menyebut **Nusa Tenggara Barat**; kecamatan sekitar rute → Tidak Layak, Lombok lain → Waspada |
 | Gempa dirasakan (15 terbaru) | `data.bmkg.go.id/DataMKG/TEWS/gempadirasakan.json` | 10 menit | Hanya ≤150 km dari Tawun / menyebut Lombok-NTB; ≥M5 → Waspada, ≥M6 di laut → Tidak Layak (24 jam) |
 
 - **Tidak ada request ke BMKG saat pengunjung membuka halaman.** Data diambil oleh `php artisan bmkg:sync` (terjadwal tiap 10 menit lewat `schedule:work`/cron), tombol *Perbarui sekarang* di **Admin → Data BMKG**, atau otomatis *setelah* respons halaman terkirim bila jeda minimum sudah lewat. Lock cache mencegah sinkron ganda; setelah gagal (mis. HTTP 429) sistem menunggu 5 menit.
-- Keputusan akhir = keputusan nakhoda bila ada, selain itu **yang terberat** antara prediksi pohon keputusan dan aturan BMKG. Aturan BMKG hanya bisa memperberat, tidak pernah melonggarkan.
+- Keputusan akhir = keputusan nakhoda bila ada, selain itu **yang terberat** antara penilaian kondisi laut dan aturan BMKG. Aturan BMKG hanya bisa memperberat, tidak pernah melonggarkan.
 - Data yang diinput petugas tidak ditimpa BMKG (bisa dikembalikan lewat tombol *Pakai data BMKG*).
 - API prakiraan cuaca tidak memuat tinggi gelombang, sehingga diperkirakan dari kecepatan angin (tinggi gelombang tipikal skala Beaufort, cenderung konservatif).
 - Semua ambang (radius gempa, magnitudo, daftar kecamatan, jeda) ada di `config/bmkg.php`.
@@ -86,39 +85,13 @@ Pilihan pemesan disimpan di sesi (`booking_draft`) sebelum login. Halaman checko
 langsung di samping ringkasan; `session()->regenerate()` setelah login/daftar mempertahankan isi sesi, sehingga pemesan
 kembali ke checkout dengan pilihan utuh. Lihat `app/Http/Controllers/BookingController.php` dan `AuthController.php`.
 
-## Pohon keputusan (inti skripsi)
-
-| Berkas | Isi |
-|---|---|
-| `app/Services/DecisionTree.php` | Entropy, Information Gain, Split Info, Gain Ratio, pembentukan pohon ID3/C4.5, prediksi, aturan IF–THEN, confusion matrix, stratified split, k-fold CV |
-| `app/Services/SailingModelTrainer.php` | Melatih dari tabel `sailing_records`, menyimpan model ke `decision_tree_models`, memprediksi ulang kondisi laut ke depan |
-| `app/Support/Sailing.php` | Atribut & kategori (cuaca, angin, gelombang, jarak pandang, pasang surut) + diskretisasi knot/meter |
-| `resources/views/admin/tree/index.blade.php` | Visualisasi pohon, tabel perhitungan simpul akar, confusion matrix, precision/recall/F1, aturan, uji coba prediksi |
-
-Alur: petugas input kondisi laut harian → model aktif memprediksi **Layak / Waspada / Tidak Layak** → admin bisa menetapkan
-keputusan akhir berbeda (catatan nakhoda) → tanggal *Tidak Layak* otomatis tertutup untuk pemesanan dan pesanan yang
-terdampak ditandai untuk dijadwalkan ulang. Hasilnya tampil publik di halaman **Kondisi Laut**.
-
-> ⚠️ **Data latih bawaan adalah data contoh (sintetis)**, dibuat `SailingRecordSeeder` agar sistem bisa diuji.
-> Untuk penelitian, ganti dengan catatan pelayaran asli (nakhoda/syahbandar + BMKG Maritim) lewat
-> **Admin → Data Latih → Impor CSV**, lalu latih ulang. Format CSV ada di halaman tersebut, contoh bisa diunduh lewat Ekspor.
-
-Eksperimen pada data contoh (split 80/20, seed 42):
-
-| Algoritma | Min. sampel | Akurasi uji | 5-fold CV | Jumlah aturan |
-|---|---|---|---|---|
-| C4.5 | 2 | 81,25% | 86,67% | 51 |
-| C4.5 | 10 | 85,42% | 88,75% | 37 |
-| C4.5 | 15 | 83,33% | 90,00% | 30 |
-| ID3 | 10 | 83,33% | 88,75% | 39 |
-
 ## Pengujian
 
 ```bash
 /Applications/XAMPP/xamppfiles/bin/php artisan test
 ```
 
-Mencakup validasi perhitungan entropy/gain terhadap dataset *Play Tennis* (Quinlan), alur draf → daftar → checkout,
+Mencakup alur draf → daftar → checkout,
 harga per grup (gili & mancing), batas sewa alat per penumpang, blokir tanggal tidak layak, pesan ganda, hak akses peran, unggah bukti → verifikasi → e-tiket → check-in.
 
 ## Yang perlu diganti sebelum dipakai sungguhan
