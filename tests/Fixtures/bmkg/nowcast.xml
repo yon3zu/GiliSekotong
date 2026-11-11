@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <?xml-stylesheet type="text/xsl" href="/cap/nowcast-rss-style.xsl"?>
+    <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+        <channel>
+            <title>Peringatan Dini Cuaca BMKG</title>
+            <link>https://www.bmkg.go.id/alerts/nowcast/id/rss.xml</link>
+            <description>Peringatan Dini Cuaca dari BMKG (Badan Meteorologi, Klimatologi, dan Geofisika)</description>
+            <atom:link href="https://www.bmkg.go.id/alerts/nowcast/id/rss.xml" rel="self" type="application/rss+xml"/>
+            <language>id</language>
+            <copyright>public domain</copyright>
+            <pubDate>Fri, 16 Oct 2026 11:30:25 +0000</pubDate>
+            <lastBuildDate>Fri, 16 Oct 2026 11:30:25 +0000</lastBuildDate>
+            <docs>http://blogs.law.harvard.edu/tech/rss</docs>
+            
+        <item>
+            <title>Hujan Lebat disertai Petir di Kalimantan Tengah</title>
+            <link>https://www.bmkg.go.id/alerts/nowcast/id/CKG20261016005_alert.xml</link>
+            <description>Hujan lebat disertai petir akan terjadi pada 16 October 2026, 18:30 WIB di sebagian wilayah Kalimantan Tengah, khususnya di ARUT UTARA.
+ Kondisi ini berpotensi menimbulkan dampak berupa jarak pandang berkurang, angin kencang, dan banjir lokal.
+ Masyarakat dihimbau untuk tetap waspada, mengurangi aktivitas di luar ruangan, serta mengambil langkah-langkah pencegahan yang diperlukan guna menjaga keselamatan.
+ Kondisi diperkirakan dapat berlangsung hingga 16 October 2026, 20:30 WIB.</description>
+            <author>cuaca.ekstrem@bmkg.go.id (BMKG)</author>
+            <category>Met</category>
+            <guid isPermaLink="false">2.49.0.1.360.0.2026.10.16.11.62.005</guid>
+            <pubDate>Fri, 16 Oct 2026 18:20:00 +0700</pubDate>
+        </item>
+
+        <item>
+            <title>Hujan Lebat disertai Petir di Sulawesi Barat</title>
+            <link>https://www.bmkg.go.id/alerts/nowcast/id/CSK20261016001_alert.xml</link>
+            <description>Hujan lebat disertai petir akan terjadi pada 16 October 2026, 19:20 WITA di sebagian wilayah Sulawesi Barat, khususnya di BAMBAIRA, BAMBALAMOTU.
+ Kondisi ini berpotensi menimbulkan dampak berupa jarak pandang berkurang, angin kencang, dan banjir lokal.
+ Masyarakat dihimbau untuk tetap waspada, mengurangi aktivitas di luar ruangan, serta mengambil langkah-langkah pencegahan yang diperlukan guna menjaga keselamatan.
+ Kondisi diperkirakan dapat berlangsung hingga 16 October 2026, 20:30 WITA.</description>
+            <author>cuaca.ekstrem@bmkg.go.id (BMKG)</author>
+            <category>Met</category>
+            <guid isPermaLink="false">2.49.0.1.360.0.2026.10.16.11.76.001</guid>
+            <pubDate>Fri, 16 Oct 2026 19:05:00 +0800</pubDate>
+        </item>
+
+        <item>
+            <title>Hujan Lebat disertai Petir di Kalimantan Timur</title>
+            <link>https://www.bmkg.go.id/alerts/nowcast/id/CKT20261016003_alert.xml</link>
+            <description>Hujan lebat disertai petir akan terjadi pada 16 October 2026, 19:00 WITA di sebagian wilayah Kalimantan Timur, khususnya di BENTIAN BESAR, KARANGAN, KELAY, MUARA WAHAU, SAMBALIUNG, SILUQ NGURAI.
+ Kondisi ini berpotensi menimbulkan dampak berupa jarak pandang berkurang, angin kencang, dan banjir lokal.
+ Masyarakat dihimbau untuk tetap waspada, mengurangi aktivitas di luar ruangan, serta mengambil langkah-langkah pencegahan yang diperlukan guna menjaga keselamatan.
+ Kondisi diperkirakan dapat berlangsung hingga 16 October 2026, 21:00 WITA.</description>
+            <author>cuaca.ekstrem@bmkg.go.id (BMKG)</author>
+            <category>Met</category>
+            <guid isPermaLink="false">2.49.0.1.360.0.2026.10.16.11.64.003</guid>
+            <pubDate>Fri, 16 Oct 2026 18:50:00 +0800</pubDate>
+        </item>
+
+        <item>
+            <title>Hujan Lebat disertai Petir di Kep. Riau</title>
+            <link>https://www.bmkg.go.id/alerts/nowcast/id/CKR20261016006_alert.xml</link>
+            <description>Hujan lebat disertai petir akan terjadi pada 16 October 2026, 18:00 WIB di sebagian wilayah Kep. Riau, khususnya di DURAI, JEMAJA, PALMATAK.
+ Kondisi ini berpotensi menimbulkan dampak berupa jarak pandang berkurang, angin kencang, dan banjir lokal.
+ Masyarakat dihimbau untuk tetap waspada, mengurangi aktivitas di luar ruangan, serta mengambil langkah-langkah pencegahan yang diperlukan guna menjaga keselamatan.
+ Kondisi diperkirakan dapat berlangsung hingga 16 October 2026, 20:00 WIB.</description>
+            <author>cuaca.ekstrem@bmkg.go.id (BMKG)</author>
+            <category>Met</category>
+            <guid isPermaLink="false">2.49.0.1.360.0.2026.10.16.11.21.006</guid>
+            <pubDate>Fri, 16 Oct 2026 17:50:00 +0700</pubDate>
+        </item>
+
+        <item>
+            <title>Hujan Lebat disertai Petir di Sulawesi Tengah</title>
+            <link>https://www.bmkg.go.id/alerts/nowcast/id/CSG20261016002_alert.xml</link>
+            <description>Hujan lebat disertai petir akan terjadi pada 16 October 2026, 18:03 WITA di sebagian wilayah Sulawesi Tengah, khususnya di BANAWA SELATAN, DOLO SELATAN, LABUAN, LINDU, LORE UTARA, MARAWOLA BARAT, SINDUE, SINDUE TOMBUSABORA.
+ Kondisi ini berpotensi menimbulkan dampak berupa jarak pandang berkurang, angin kencang, dan banjir lokal.
+ Masyarakat dihimbau untuk tetap waspada, mengurangi aktivitas di luar ruangan, serta mengambil langkah-langkah pencegahan yang diperlukan guna menjaga keselamatan.
+ Kondisi diperkirakan dapat berlangsung hingga 16 October 2026, 21:20 WITA.</description>
+            <author>cuaca.ekstrem@bmkg.go.id (BMKG)</author>
+            <category>Met</category>
+            <guid isPermaLink="false">2.49.0.1.360.0.2026.10.16.11.72.002</guid>
+            <pubDate>Fri, 16 Oct 2026 17:51:00 +0800</pubDate>
+        </item>
+
+        <item>
+            <title>Hujan Lebat disertai Petir di Sumatera Utara</title>
+            <link>https://www.bmkg.go.id/alerts/nowcast/id/CSU20261016003_alert.xml</link>
+            <description>Hujan lebat disertai petir akan terjadi pada 16 October 2026, 16:50 WIB di sebagian wilayah Sumatera Utara, khususnya di ADIAN KOTING, AMANDRAYA, ANGKOLA SANGKUNUR, ANGKOLA SELATAN, ARAMO, BADIRI, BATANG ANGKOLA, BATANG TORU, GUNUNGSITOLI UTARA, HILIMEGAI, HURUNA, KERAJAAN, LINGGA BAYU, LOLOMATUA, LOLOWAU, LUMUT, MANDUAMAS, MUARA BATANG GADIS, MUARA BATANG TORU, NATAL, O'O'U, ONAN GANJANG, ONOHAZUMBA, PAGINDAR, PAKKAT, PANDAN, PARLILITAN, PARMONANGAN, PERGETTENG GETTENG SENGKUT, PINANGSORI, SALAK, SARUDIK, SAWO, SIBABANGUN, SIBOLGA KOTA, SIEMPAT RUBE, SIJAMAPOLANG, SIPOHOLON, SIRANDORUNG, SITAHUIS, SITELU TALI URANG JEHE, SITELU TALI URANG JULU, SITOLU ORI, SOMOLO-MOLO, SUKA BANGUN, TARABINTANG, TINADA, TUHEMBERUA, TUKKA, ULUGAWO, ULUNOYO, ULUSUSUA.
+ Kondisi ini berpotensi menimbulkan dampak berupa jarak pandang berkurang, angin kencang, dan banjir lokal.
+ Masyarakat dihimbau untuk tetap waspada, mengurangi aktivitas di luar ruangan, serta mengambil langkah-langkah pencegahan yang diperlukan guna menjaga keselamatan.
+ Kondisi diperkirakan dapat berlangsung hingga 16 October 2026, 19:50 WIB.</description>
+            <author>cuaca.ekstrem@bmkg.go.id (BMKG)</author>
+            <category>Met</category>
+            <guid isPermaLink="false">2.49.0.1.360.0.2026.10.16.11.12.003</guid>
+            <pubDate>Fri, 16 Oct 2026 16:40:00 +0700</pubDate>
+        </item>
+
+        <item>
+            <title>Hujan Lebat disertai Petir di Sumatera Barat</title>
+            <link>https://www.bmkg.go.id/alerts/nowcast/id/CSB20261016001_alert.xml</link>
+            <description>Hujan lebat disertai petir akan terjadi pada 16 October 2026, 16:50 WIB di sebagian wilayah Sumatera Barat, khususnya di KINALI, KOTO BALINGKA, LEMBAH MELINTANG, LUHAK NAN DUO, PASAMAN, SUNGAIAUR, SUNGAIBEREMAS.
+ Kondisi ini berpotensi menimbulkan dampak berupa jarak pandang berkurang, angin kencang, dan banjir lokal.
+ Masyarakat dihimbau untuk tetap waspada, mengurangi aktivitas di luar ruangan, serta mengambil langkah-langkah pencegahan yang diperlukan guna menjaga keselamatan.
+ Kondisi diperkirakan dapat berlangsung hingga 16 October 2026, 19:00 WIB.</description>
+            <author>cuaca.ekstrem@bmkg.go.id (BMKG)</author>
+            <category>Met</category>
+            <guid isPermaLink="false">2.49.0.1.360.0.2026.10.16.11.13.001</guid>
+            <pubDate>Fri, 16 Oct 2026 16:40:00 +0700</pubDate>
+        </item>
+
+        <item>
+            <title>Hujan Lebat disertai Petir di Riau</title>
+            <link>https://www.bmkg.go.id/alerts/nowcast/id/CRU20261016005_alert.xml</link>
+            <description>Hujan lebat disertai petir akan terjadi pada 16 October 2026, 16:40 WIB di sebagian wilayah Riau, khususnya di BAGAN SINEMBAH, BANGKO, BATANG TUAKA, BATU HAMPAR, BUNUT, GAUNG, GAUNG ANAK SERKA, KEMPAS, KUBU, KUBU BABUSSALAM, PASIR LIMAU KAPAS, PELALAWAN, PULAUMERBAU, RANGSANG, RIMBA MELINTANG, RUPAT, SIMPANG KANAN, SINABOI, SUNGAI APIT, SUNGAI SEMBILAN, TEBING TINGGI BARAT, TEBING TINGGI TIMUR, TELUK MERANTI, TEMBILAHAN HULU, TEMPULING.
+ Kondisi ini berpotensi menimbulkan dampak berupa jarak pandang berkurang, angin kencang, dan banjir lokal.
+ Masyarakat dihimbau untuk tetap waspada, mengurangi aktivitas di luar ruangan, serta mengambil langkah-langkah pencegahan yang diperlukan guna menjaga keselamatan.
+ Kondisi diperkirakan dapat berlangsung hingga 16 October 2026, 19:30 WIB.</description>
+            <author>cuaca.ekstrem@bmkg.go.id (BMKG)</author>
+            <category>Met</category>
+            <guid isPermaLink="false">2.49.0.1.360.0.2026.10.16.11.14.005</guid>
+            <pubDate>Fri, 16 Oct 2026 16:30:00 +0700</pubDate>
+        </item>
+
+        <item>
+            <title>Hujan Lebat disertai Petir di Aceh</title>
+            <link>https://www.bmkg.go.id/alerts/nowcast/id/CAH20261016003_alert.xml</link>
+            <description>Hujan lebat disertai petir akan terjadi pada 16 October 2026, 16:38 WIB di sebagian wilayah Aceh, khususnya di DANAU PARIS, DARUL HIKMAH, DARUL KAMAL, GUNUNG MERIAH, INDRA JAYA, JAYA, KRUENG SABEE, PANGA, PASIE RAYA, SAMPOINIET, SETIA BHAKTI, SIMPANG KANAN, SIMPANG TIGA, SINGKIL UTARA, SUKAMAKMUR, TANGSE.
+ Kondisi ini berpotensi menimbulkan dampak berupa jarak pandang berkurang, angin kencang, dan banjir lokal.
+ Masyarakat dihimbau untuk tetap waspada, mengurangi aktivitas di luar ruangan, serta mengambil langkah-langkah pencegahan yang diperlukan guna menjaga keselamatan.
+ Kondisi diperkirakan dapat berlangsung hingga 16 October 2026, 19:59 WIB.</description>
+            <author>cuaca.ekstrem@bmkg.go.id (BMKG)</author>
+            <category>Met</category>
+            <guid isPermaLink="false">2.49.0.1.360.0.2026.10.16.11.11.003</guid>
+            <pubDate>Fri, 16 Oct 2026 16:28:00 +0700</pubDate>
+        </item>
+
+        <item>
+            <title>Hujan Lebat disertai Petir di Kalimantan Tengah</title>
+            <link>https://www.bmkg.go.id/alerts/nowcast/id/CKG20261016004_alert.xml</link>
+            <description>Hujan lebat disertai petir akan terjadi pada 16 October 2026, 16:15 WIB di sebagian wilayah Kalimantan Tengah, khususnya di ARUT SELATAN, BALAI RIAM, HANAU, KOTAWARINGIN LAMA, PANGKALAN LADA, SERUYAN RAYA.
+ Kondisi ini berpotensi menimbulkan dampak berupa jarak pandang berkurang, angin kencang, dan banjir lokal.
+ Masyarakat dihimbau untuk tetap waspada, mengurangi aktivitas di luar ruangan, serta mengambil langkah-langkah pencegahan yang diperlukan guna menjaga keselamatan.
+ Kondisi diperkirakan dapat berlangsung hingga 16 October 2026, 18:15 WIB.</description>
+            <author>cuaca.ekstrem@bmkg.go.id (BMKG)</author>
+            <category>Met</category>
+            <guid isPermaLink="false">2.49.0.1.360.0.2026.10.16.11.62.004</guid>
+            <pubDate>Fri, 16 Oct 2026 16:05:00 +0700</pubDate>
+        </item>
+        </channel>
+    </rss>

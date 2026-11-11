@@ -1,0 +1,208 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+    --font-display: 'Fraunces', ui-serif, Georgia, serif;
+
+    --color-sand-50: #fbf8f2;
+    --color-sand-100: #f5eee1;
+    --color-sand-200: #ebdfc8;
+    --color-sand-300: #dccaa6;
+    --color-sea-50: #eaf6f6;
+    --color-sea-100: #cfeceb;
+    --color-sea-200: #9fd8d6;
+    --color-sea-400: #3fa9a6;
+    --color-sea-500: #188c8a;
+    --color-sea-600: #0f7270;
+    --color-sea-700: #0d5a5a;
+    --color-sea-800: #0c4448;
+    --color-sea-900: #0a3338;
+    --color-sea-950: #06222a;
+    --color-coral-50: #fdf1ec;
+    --color-coral-100: #fbdccf;
+    --color-coral-400: #f08a62;
+    --color-coral-500: #e8683f;
+    --color-coral-600: #cf4f27;
+    --color-coral-700: #a93d1c;
+    --color-ink: #13262b;
+}
+
+@layer base {
+    html {
+        -webkit-tap-highlight-color: transparent;
+        scroll-behavior: smooth;
+    }
+    body {
+        @apply bg-sand-50 font-sans text-ink antialiased;
+    }
+    /* Cegah isi panjang (tabel, teks terpotong) melebarkan kolom grid di layar sempit */
+    main .grid > * {
+        min-width: 0;
+    }
+    [x-cloak] {
+        display: none !important;
+    }
+    ::selection {
+        @apply bg-coral-100 text-coral-700;
+    }
+}
+
+@layer components {
+    .container-x {
+        @apply mx-auto w-full max-w-6xl px-4 sm:px-6;
+    }
+    .eyebrow {
+        @apply text-xs font-bold tracking-[0.18em] text-coral-600 uppercase;
+    }
+    .h-display {
+        @apply font-display font-semibold tracking-tight text-sea-950;
+        font-variation-settings: 'SOFT' 100, 'WONK' 1;
+    }
+    .btn,
+    .btn-primary,
+    .btn-sea,
+    .btn-ghost {
+        @apply inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full px-5 py-2.5 text-sm font-semibold transition focus-visible:outline-2 focus-visible:outline-offset-2 disabled:cursor-not-allowed disabled:opacity-50;
+    }
+    .btn-primary {
+        @apply bg-coral-500 text-white shadow-[0_6px_0_-2px_var(--color-coral-700)] hover:bg-coral-600 active:translate-y-0.5 active:shadow-none focus-visible:outline-coral-500;
+    }
+    .btn-sea {
+        @apply bg-sea-800 text-white hover:bg-sea-900 focus-visible:outline-sea-700;
+    }
+    .btn-ghost {
+        @apply border border-sea-900/15 bg-white text-sea-900 hover:border-sea-900/40;
+    }
+    .btn-sm {
+        @apply px-3.5 py-1.5 text-xs;
+    }
+    .card {
+        @apply rounded-2xl border border-sand-200 bg-white;
+    }
+    .label {
+        @apply mb-1.5 block text-sm font-semibold text-sea-950;
+    }
+    .input {
+        @apply block w-full rounded-xl border border-sand-300 bg-white px-3.5 py-2.5 text-sm text-ink placeholder:text-stone-400 focus:border-sea-500 focus:ring-2 focus:ring-sea-200 focus:outline-none;
+    }
+    .input-error {
+        @apply mt-1.5 text-xs font-medium text-coral-700;
+    }
+    .chip {
+        @apply inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5 text-xs font-semibold;
+    }
+    .tone-layak {
+        @apply bg-emerald-50 text-emerald-800 ring-1 ring-emerald-200;
+    }
+    .tone-waspada {
+        @apply bg-amber-50 text-amber-800 ring-1 ring-amber-200;
+    }
+    .tone-tidak {
+        @apply bg-red-50 text-red-800 ring-1 ring-red-200;
+    }
+    .tone-none {
+        @apply bg-stone-100 text-stone-600 ring-1 ring-stone-200;
+    }
+    .prose-id p {
+        @apply mb-4 leading-relaxed text-stone-700;
+    }
+    .table-base {
+        @apply w-full text-left text-sm;
+    }
+    .table-base th {
+        @apply border-b border-sand-200 px-3 py-2.5 text-xs font-bold tracking-wide whitespace-nowrap text-stone-500 uppercase;
+    }
+    .table-base td {
+        @apply border-b border-sand-100 px-3 py-3 align-top;
+    }
+    .num {
+        font-variant-numeric: tabular-nums;
+    }
+}
+
+/* Garis ombak dekoratif */
+.wave-edge {
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 12'%3E%3Cpath d='M0 6 Q15 0 30 6 T60 6 T90 6 T120 6 V12 H0Z' fill='%23fbf8f2'/%3E%3C/svg%3E") repeat-x bottom / 120px 12px;
+}
+.ticket-edge {
+    background-image: radial-gradient(circle at 10px 50%, transparent 9px, white 10px);
+    background-size: 20px 100%;
+}
+
+@keyframes bob {
+    0%, 100% { transform: translateY(0) rotate(-1deg); }
+    50% { transform: translateY(-4px) rotate(1deg); }
+}
+.animate-bob {
+    animation: bob 5s ease-in-out infinite;
+    transform-origin: center bottom;
+}
+@media (prefers-reduced-motion: reduce) {
+    .animate-bob { animation: none; }
+    html { scroll-behavior: auto; }
+}
+
+/* Visualisasi pohon keputusan (atas ke bawah) */
+.dt ul {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding-top: 1.25rem;
+}
+.dt li {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.25rem 0.35rem 0;
+    list-style: none;
+}
+.dt li::before,
+.dt li::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 50%;
+    width: 50%;
+    height: 1.25rem;
+    border-top: 1.5px solid var(--color-sand-300);
+}
+.dt li::after {
+    right: auto;
+    left: 50%;
+    border-left: 1.5px solid var(--color-sand-300);
+}
+.dt li:only-child::before,
+.dt li:only-child::after {
+    display: none;
+}
+.dt li:only-child {
+    padding-top: 0;
+}
+.dt li:first-child::before,
+.dt li:last-child::after {
+    border: 0 none;
+}
+.dt li:last-child::before {
+    border-right: 1.5px solid var(--color-sand-300);
+    border-radius: 0 6px 0 0;
+}
+.dt li:first-child::after {
+    border-radius: 6px 0 0 0;
+}
+.dt ul ul::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 1.25rem;
+    border-left: 1.5px solid var(--color-sand-300);
+}
+.dt > ul {
+    padding-top: 0;
+}
